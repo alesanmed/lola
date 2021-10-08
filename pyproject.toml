@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "lola"
+version = "0.1.0"
+description = ""
+authors = ["Ale Sanchez <alesanchezmedina@gmail.com>"]
+license = "Apache 2.0"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+librosa = "^0.8.1"
+youtube_dl = "^2021.6.6"
+sox = "^1.4.1"
+
+[tool.poetry.dev-dependencies]
+black = "^21.9b0"
+flake8 = "^3.9.2"
+pylint = "^2.11.1"
+isort = "^5.9.3"
+bandit = "^1.7.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

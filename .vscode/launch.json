@@ -1,0 +1,43 @@
+{
+  // Use IntelliSense para saber los atributos posibles.
+  // Mantenga el puntero para ver las descripciones de los existentes atributos.
+  // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Flask",
+      "type": "python",
+      "request": "launch",
+      "module": "flask",
+      "env": {
+        "FLASK_APP": "covid-backend",
+        "ENV": "development"
+      },
+      "args": [
+        "run",
+        "--no-debugger"
+      ],
+      "cwd": "${workspaceFolder}/backend"
+    },
+    {
+      "name": "Python: Archivo actual",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "args": [
+        "--help",
+      ]
+    },
+    {
+      "name": "Python: Streamlit",
+      "type": "python",
+      "request": "launch",
+      "module": "streamlit.cli",
+      "args": [
+        "run",
+        "${workspaceFolder}/dashboard/app/main.py",
+      ],
+    }
+  ]
+}
