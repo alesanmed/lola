@@ -40,7 +40,7 @@ class YoutubeAudioSource(AudioSource):
             "postprocessors": [
                 {
                     "key": "FFmpegExtractAudio",
-                    "preferredcodec": "wav",
+                    "preferredcodec": "mp3",
                     "preferredquality": "320",
                 }
             ],
@@ -48,13 +48,14 @@ class YoutubeAudioSource(AudioSource):
             "verbose": True,
             "outtmpl": audio_folder + "/%(id)s.%(ext)s",
             "forceduration": True,
+            "cachedir": False,
         }
 
         with YoutubeDL(ydl_params) as ydl:
             video_info = ydl.extract_info(link)
 
             if video_info is not None:
-                audio_path: str = f"{audio_folder}/{video_info['id']}.wav"
+                audio_path: str = f"{audio_folder}/{video_info['id']}.mp3"
                 duration: int = video_info["duration"]
 
                 return audio_path, duration
