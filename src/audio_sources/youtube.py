@@ -3,6 +3,7 @@ import os
 from typing import Iterable, Tuple
 
 from youtube_dl import YoutubeDL
+from youtube_dl.utils import DownloadError
 
 from . import AudioSource
 
@@ -52,12 +53,17 @@ class YoutubeAudioSource(AudioSource):
         }
 
         with YoutubeDL(ydl_params) as ydl:
-            video_info = ydl.extract_info(link)
+            try:
+                video_info = ydl.extract_info(link)
 
-            if video_info is not None:
-                audio_path: str = f"{audio_folder}/{video_info['id']}.mp3"
-                duration: int = video_info["duration"]
+                if video_info is not None:
+                    audio_path: str = f"{audio_folder}/{video_info['id']}.mp3"
+                    duration: int = video_info["duration"]
 
-                return audio_path, duration
-            else:
-                raise VideoNotDownloadableError(f"Could not download video {link}")
+                    return audio_path, duration
+                else:
+                    raise VideoNotDownloadableError(f"Could not download video {link}")
+            except DownloadError as exception:
+                print(f"Error processing video {link}. Skipping...")
+                print(exception)
+                return self.__next__()

@@ -28,31 +28,44 @@ class AudioProcessor:
 
             os.remove(audio_path)
 
-    def split_audio(self, audio_path: str, duration: int):
+    def split_audio(
+        self,
+        audio_path: str,
+        duration: int,
+        sample_range=(10, 15),
+        offset_range=(-5, 5),
+    ):
         """
-        Aux function for splitting an audio file in random samples of 30 seconds
+        Aux function for splitting an audio file in random samples of 30-50 seconds (with overlapping)
         """
-        splits = duration // 120
         audio_ext = audio_path.split(".")[-1]
 
-        for i in range(splits + 1):
-            start = 120 * i
-            end = start + 120
+        duration_processed = 0
+
+        while duration_processed < duration:
+            sample_length = random.randint(*sample_range)
+
+            offset = random.randint(*offset_range)
+
+            start = duration_processed + offset
+
+            if start < 0:
+                start = 0
+
+            end = start + sample_length
 
             if end > duration:
                 end = duration
 
-            sample_length = random.randint(30, 50)
+            duration_processed = end
 
             if end - start < sample_length:
                 print("Not long enough")
                 continue
 
-            sample_start = random.randint(start, end - sample_length)
-
             tfm = sox.Transformer()
 
-            tfm.trim(sample_start, sample_start + sample_length)
+            tfm.trim(start, end)
 
             tfm.fade(0.3, 0.3)
 
@@ -84,6 +97,19 @@ if __name__ == "__main__":
 
     processor_bulerias.process_audios()
 
+    # _ = [
+    #     os.unlink(
+    #         os.path.abspath(
+    #             os.path.join(
+    #                 os.path.dirname(__file__),
+    #                 "../assets/audios/bulerias",
+    #                 f"{file}.mp3",
+    #             )
+    #         )
+    #     )
+    #     for file in [6, 3]
+    # ]
+
     source_alegrias = YoutubeAudioSource(
         [
             "https://www.youtube.com/watch?v=hGiW7uD55zs",
@@ -112,6 +138,19 @@ if __name__ == "__main__":
         "alegrias",
     )
 
-    processor_alegrias = AudioProcessor(source_alegrias, 41)
+    processor_alegrias = AudioProcessor(source_alegrias)
 
-    processor_alegrias.process_audios()
+    # processor_alegrias.process_audios()
+
+    # _ = [
+    #     os.unlink(
+    #         os.path.abspath(
+    #             os.path.join(
+    #                 os.path.dirname(__file__),
+    #                 "../assets/audios/bulerias",
+    #                 f"{file}.mp3",
+    #             )
+    #         )
+    #     )
+    #     for file in [18, 20, 21]
+    # ]
