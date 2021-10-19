@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  dashboard:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - BACK_URL=https://alesanmed-covid-backend.herokuapp.com
+      - PORT=8080
+
