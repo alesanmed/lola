@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "lola"
+name = "lola-research"
 version = "0.1.0"
 description = ""
 authors = ["Ale Sanchez <alesanchezmedina@gmail.com>"]
