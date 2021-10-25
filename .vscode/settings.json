@@ -1,0 +1,72 @@
+{
+  "python.formatting.provider": "black",
+  "git.enableCommitSigning": true,
+  "[python]": {
+    "editor.formatOnPaste": false,
+    "gitlens.codeLens.symbolScopes": [
+      "!Module"
+    ],
+    "editor.wordBasedSuggestions": false,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true,
+    }
+  },
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Args": [
+    "--max-line-length=120"
+  ],
+  "python.linting.banditEnabled": true,
+  "python.testing.autoTestDiscoverOnSaveEnabled": true,
+  "python.testing.unittestEnabled": true,
+  "python.testing.unittestArgs": [
+    "-v",
+    "-s",
+    "./data-loader",
+    "-p",
+    "*test*.py"
+  ],
+  "python.testing.pytestEnabled": false,
+  "python.testing.nosetestsEnabled": false,
+  "python.analysis.extraPaths": [
+    "./app"
+  ],
+  "python.analysis.typeCheckingMode": "basic",
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.accessibilitySupport": "off",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "python.languageServer": "Pylance",
+  "gitlens.keymap": "chorded",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.snippetSuggestions": "top",
+  "gitlens.advanced.messages": {
+    "suppressCommitNotFoundWarning": false,
+    "suppressCommitHasNoPreviousCommitWarning": false,
+    "suppressGitVersionWarning": false,
+    "suppressFileNotUnderSourceControlWarning": false,
+    "suppressNoRepositoryWarning": false,
+    "suppressLineUncommittedWarning": false
+  },
+  "git.autofetch": true,
+  "editor.fontFamily": "'MesloLGS NF', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 13,
+  "editor.fontLigatures": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "customizeUI.activityBar": "bottom",
+  "customizeUI.activityBarHideSettings": true,
+  "customizeUI.titleBar": "inline",
+  "pythonTestExplorer.testFramework": "unittest",
+}
