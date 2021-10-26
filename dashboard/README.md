@@ -12,9 +12,9 @@ This piece contains the dashboard. Made with [Streamlit](https://streamlit.io/).
   - [Configuration ⚙](#configuring)
   - [Execution 🎯](#running)
 - [Pages](#pages)
-  - [General data](#general-data)
-  - [Country data](#country-data)
-  - [Manage data](#manage-data)
+  - [Identify your audio](#identify-audio)
+  - [Data exploration](#data-exploration)
+  - [Models evaluation](#models-evaluation)
 
 ## Some screenshots 📸 <a name="screenshots"></a>
 ![Cases per province](assets/cases_by_province.png)
@@ -27,7 +27,7 @@ This piece contains the dashboard. Made with [Streamlit](https://streamlit.io/).
 
 ## Running the code 🚂 <a name="running-code"></a>
 
-If you want to run the dashboard from source, clone it and install the dependencies.
+If you want to run the dashboard from source, clone it.
 
 ```
 git clone https://github.com/alesanmed-educational-projects/core-data-covid-project.git
@@ -53,7 +53,7 @@ poetry install
 
 The project looks for the following environment variables to configure several parts:
 
-- BACK_URL: URL de la API de flask
+- BACK_URL: The URL where the backend is running
 
 ### Execution 🎯 <a name="running"></a>
 
@@ -65,18 +65,16 @@ streamlit run app/main.py
 
 ## Pages <a name="pages"></a>
 
-### General data <a name="general-data"></a>
+### Identify your audio <a name="identify-audio"></a>
 
-This page shows general COVID data. You can find global cases, global charts as well as a map with rates per country.
+On this page, you can upload your mp3 file and get a prediction about the flamenco style.
 
-You can also filter the data by countries and types, as well as the chart type.
+Also, you will get some info about the style identified.
 
-### Country data <a name="country-data"></a>
+### Data exploration <a name="data-exploration"></a>
 
-This page is a per-country detailed page. It splits the data by provinces (states). You can export that page to PDF and also send it via email.
+Here, you can find some charts exploring the different styles and their features.
 
-Again, you can filter by provinces, case type, and chart type.
+### Models evaluation data <a name="models-evaluation"></a>
 
-### Manage data <a name="manage-data"></a>
-
-This page allows creating new countries using an API key. The created data should be available right away in the dashboard.
+On this last page, there are metrics and charts about the performance of the different models.
