@@ -1,12 +1,12 @@
 FROM python:3.9.6-slim-buster
 
-WORKDIR /covid-dashboard
+WORKDIR /lola-dashboard
 
-ADD requirements.txt /covid-dashboard
+ADD requirements.txt /lola-dashboard
 
 RUN pip install -r requirements.txt
 
-ADD . /covid-dashboard
+ADD . /lola-dashboard
 
 EXPOSE $PORT
 
