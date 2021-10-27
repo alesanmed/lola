@@ -6,7 +6,6 @@ This piece contains the dashboard. Made with [Streamlit](https://streamlit.io/).
 
 # Table of contents
 
-- [Some screenshots 📸](#screenshots)
 - [Running the code 🚂](#running-code)
   - [Installation 🎢](#installing)
   - [Configuration ⚙](#configuring)
@@ -15,15 +14,6 @@ This piece contains the dashboard. Made with [Streamlit](https://streamlit.io/).
   - [Identify your audio](#identify-audio)
   - [Data exploration](#data-exploration)
   - [Models evaluation](#models-evaluation)
-
-## Some screenshots 📸 <a name="screenshots"></a>
-![Cases per province](assets/cases_by_province.png)
-
-![Spain map with cases info](assets/provinces_contributions.png)
-
-![Evolution of cases](../assets/img/dashboard.png)
-
-![World map with cases info](assets/img/worldmap.png)
 
 ## Running the code 🚂 <a name="running-code"></a>
 

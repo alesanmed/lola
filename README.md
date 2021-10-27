@@ -13,22 +13,26 @@
 ![Built with Python](https://img.shields.io/pypi/pyversions/covid-data)
 ![Deploy Badge](https://github.com/alesanmed-educational-projects/core-data-covid-project/actions/workflows/okteto_deploy.yml/badge.svg)
 
+![](assets/img/cover.png)
+
+### Play with the project [here](https://lola.alesanchez.es/)
+
+---
+
 Welcome to my final project made to the context of [CORE School](https://www.corecode.school/).
 
 LOLA is a tool for classifying audios to different flamenco styles ([palo](https://en.wikipedia.org/wiki/Palo_(flamenco))).
 
-### Access the Dashboard for exploring the data [here](https://covid-data-alesanmed.cloud.okteto.net/)
-
 # Table of contents
 
 - [Project and motivation 💃](#motivation)
+- [Dataset Used 📚](#data-used)
 - [Models used 🪐](#models)
   - [Deep learning 🌌](#deep-learning)
   - [Machine learning 🖨️](#machine-learning)
 - [Local deployment 🔨🔧](#local-deployment)
   - [With Docker 🐳](#with-docker)
   - [From source ⛲](#from-source)
-- [Dataset Used 📚](#data-used)
 - [Future steps](#future)
 - [License](#license)
 
@@ -50,6 +54,42 @@ There are some styles present only to one of them. All of this is just to illust
 Even for experienced people, classifying specific audios is hard. That's why I decided to make an expert system for trying to solve this task.
 
 I'm from Andalusia, where flamenco comes from, so contributing in any way to that culture it's a major motivation for me.
+
+## Dataset used 📚 <a name="data-used"></a>
+
+The dataset is a self-built one. I manually selected, split and tagged audio files from three different palos:
+
+- Bulerías
+- Alegrías
+- Sevillanas
+
+The total dataset is composed by 577 alegrias audios, 589 bulerias and 518 sevillanas.
+
+I've built the largest flamenco dataset on the internet. You can download it from [here](https://zenodo.org/record/5597881)
+
+The dataset structure is:
+
+```
+.
+├── alegrias
+│   ├── 0.mp3
+│   ├── 1.mp3
+│   ├── ...
+│   └── n.mp3
+├── bulerias
+│   ├── 0.mp3
+│   ├── 1.mp3
+│   ├── ...
+│   └── n.mp3
+└── sevillanas
+    ├── 0.mp3
+    ├── 1.mp3
+    ├── ...
+    └── n.mp3
+```
+
+There is another flamenco dataset available, called [TONAS](https://www.upf.edu/web/mtg/tonas). But there are only 72 acapella audio samples.
+
 
 ## Models used 🪐 <a name="models"></a>
 
@@ -89,49 +129,13 @@ docker-compose up
 
 ### From source ⛲ <a name="from-source"></a>
 
-[![Open to Visual Studio Code](https://open.vscode.dev/badges/open-to-vscode.svg)](https://github.com/alesanmed/lola.git)
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://github.com/alesanmed/lola.git)
 
 
 If you want to take this path, I recommend:
  1. Clone the repository
  2. Open it to your favorite IDE
  3. Follow the steps to each part's README
-
-## Dataset used 📚 <a name="data-used"></a>
-
-The dataset is a self-built one. I manually selected, split and tagged audio files from three different palos:
-
-- Bulerías
-- Alegrías
-- Sevillanas
-
-The total dataset is composed by 577 alegrias audios, 589 bulerias and 518 sevillanas.
-
-I've built the largest flamenco dataset on the internet. You can download it from [here](https://zenodo.org/record/5597881)
-
-The dataset structure is:
-
-```
-.
-├── alegrias
-│   ├── 0.mp3
-│   ├── 1.mp3
-│   ├── ...
-│   └── n.mp3
-├── bulerias
-│   ├── 0.mp3
-│   ├── 1.mp3
-│   ├── ...
-│   └── n.mp3
-└── sevillanas
-    ├── 0.mp3
-    ├── 1.mp3
-    ├── ...
-    └── n.mp3
-```
-
-There is another flamenco dataset available, called [TONAS](https://www.upf.edu/web/mtg/tonas). But there are only 72 acapella audio samples.
-
 ## License
 
 [Apache 2.0](LICENSE)
