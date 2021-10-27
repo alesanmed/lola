@@ -29,7 +29,7 @@ LOLA is a tool for classifying audios to different flamenco styles ([palo](https
 - [Dataset Used 📚](#data-used)
 - [Models used 🪐](#models)
   - [Deep learning 🌌](#deep-learning)
-  - [Machine learning 🖨️](#machine-learning)
+  - [Machine learning 👽](#machine-learning)
 - [Local deployment 🔨🔧](#local-deployment)
   - [With Docker 🐳](#with-docker)
   - [From source ⛲](#from-source)
